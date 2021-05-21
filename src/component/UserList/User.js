@@ -18,7 +18,7 @@ class User extends React.Component {
             Edit User
           </div>
           <div
-            onClick={this.props.removeUser}
+            onClick={() => this.props.removeUser(this.props.id)}
             className="button"
           >
             Remove User
