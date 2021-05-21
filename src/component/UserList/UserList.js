@@ -1,5 +1,5 @@
 import React from 'react';
-import User from './user';
+import User from './User';
 
 const UserList = ({ users, editUser, removeUser }) => {
   return (
@@ -9,7 +9,7 @@ const UserList = ({ users, editUser, removeUser }) => {
       </div>
     ) :
     users.map((user) => (
-      <User key={user.id} {...user} editUSer={editUser} removeUser={removeUser} />
+      <User key={user.id} {...user} editUser={editUser} removeUser={removeUser} />
     ))
   )
 };
