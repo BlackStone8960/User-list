@@ -1,4 +1,5 @@
 import React from 'react';
+import './user.css';
 
 class User extends React.Component {
   // EditでUser情報を出したい場合はここにメソッドを定義してIDを引数で渡す
