@@ -1,0 +1,17 @@
+.user-container {
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.buttons-flex {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.button {
+  padding: 3px 6px;
+  border: 1px solid black;
+
+}
