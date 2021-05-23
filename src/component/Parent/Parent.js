@@ -14,9 +14,15 @@ class Parent extends React.Component {
       if(res.status!==200) {
         console.log(`This is a error ${res.status}`);
       }})
+
+      res.json().then(data => {
+        this.setState({users:data})
+      }).catch(error => {
+        console.log(`Error${error}`)
+      })
   }
 
-  removeUser = () => {
+  removeUser = (id) => {
     let currentListUsers = this.state.users;
     let newListUsers = currentListUsers.filter(user => user.id!==id);
     this.setState({
@@ -25,13 +31,15 @@ class Parent extends React.Component {
   }
 
   editUser = () => {
-
+    this.setState ({
+      edit: true
+    });
   }
 
   render() {
     return (
       <>
-      <EditUser />
+      <EditUser edit={this.state.edit ? "ture" : "false"}/> 
       <UserList users={this.state.users} deleteUser={this.removeUser} editUser={this.editUser}/>
       </>
     );
