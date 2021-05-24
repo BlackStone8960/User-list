@@ -13,13 +13,14 @@ class Parent extends React.Component {
     fetch("https://jsonplaceholder.typicode.com/users").then(res => {
       if(res.status!==200) {
         console.log(`This is a error ${res.status}`);
-      }})
+      }
 
       res.json().then(data => {
         this.setState({users:data})
       }).catch(error => {
         console.log(`Error${error}`)
       })
+    })
   }
 
   removeUser = (id) => {
@@ -39,8 +40,11 @@ class Parent extends React.Component {
   render() {
     return (
       <>
-      <EditUser edit={this.state.edit ? "ture" : "false"}/> 
-      <UserList users={this.state.users} deleteUser={this.removeUser} editUser={this.editUser}/>
+        {this.state.edit ? (
+          <EditUser/> 
+        ) : (
+          <UserList users={this.state.users} deleteUser={this.removeUser} editUser={this.editUser}/>
+        )}
       </>
     );
   }
