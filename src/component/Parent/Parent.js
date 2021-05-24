@@ -3,9 +3,18 @@ import React from "react";
 import EditUser from "../EditUser/EditUser";
 import UserList from "../UserList/UserList";
 
+const defaultSelectedUser = {
+  name: '',
+  email: '',
+  company: {
+    name: ''
+  }
+};
+
 class Parent extends React.Component {
   state = {
     users: [],
+    selectedUser: defaultSelectedUser,
     edit:false
   }
 
@@ -31,9 +40,30 @@ class Parent extends React.Component {
     })
   }
 
-  editUser = () => {
+  editUser = (id) => {
+    const matchedUser = this.state.users.find((user) => user.id === id);
     this.setState ({
+      selectedUser: matchedUser,
       edit: true
+    });
+  }
+
+  onSave = (savedUser) => {
+    this.setState((prevState) => { 
+      const newUsers = prevState.users.map((user) => {
+        if (user.id === savedUser.id) {
+          return {
+            ...user,
+            ...savedUser
+          };
+        } else {
+          return user
+        }
+      });
+      return {
+        users: newUsers,
+        edit: false
+      }
     });
   }
 
@@ -41,7 +71,7 @@ class Parent extends React.Component {
     return (
       <>
         {this.state.edit ? (
-          <EditUser/> 
+          <EditUser {...this.state.selectedUser} onSave={this.onSave} /> 
         ) : (
           <div className="main">
           <UserList

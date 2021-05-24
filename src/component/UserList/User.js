@@ -2,8 +2,6 @@ import React from 'react';
 import './user.css';
 
 class User extends React.Component {
-  // EditでUser情報を出したい場合はここにメソッドを定義してIDを引数で渡す
-
   render() {
     return (
       <div className="user-container">
@@ -12,7 +10,7 @@ class User extends React.Component {
         <p>{this.props.company.name}</p>
         <div className='buttons-flex'>
           <div
-            onClick={this.props.editUser}
+            onClick={() => this.props.editUser(this.props.id)}
             className="button"
           >
             Edit User
@@ -30,5 +28,3 @@ class User extends React.Component {
 };
 
 export default User;
-
-// ({ name, email, company, editUser, removeUser }) 

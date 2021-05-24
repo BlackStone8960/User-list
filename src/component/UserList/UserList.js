@@ -9,7 +9,12 @@ const UserList = ({ users, editUser, removeUser }) => {
       </div>
     ) :
     users.map((user) => (
-      <User key={user.id} {...user} editUser={editUser} removeUser={removeUser} />
+      <User
+        key={user.id}
+        {...user}
+        editUser={editUser}
+        removeUser={removeUser}
+      />
     ))
   )
 };
