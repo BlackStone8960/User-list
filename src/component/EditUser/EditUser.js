@@ -3,6 +3,7 @@ import React from 'react';
 class EditUser extends React.Component {
   render() {
     return (
+      <div className="editContainer">
       <form onSubmit={this.props.onSave}>
         <div>
           <label htmlFor={this.props.name}>Name</label>
@@ -18,6 +19,7 @@ class EditUser extends React.Component {
         </div>
         <button>Save</button>
       </form>
+      </div>
     )
   }
 }

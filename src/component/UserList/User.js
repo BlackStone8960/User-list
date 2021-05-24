@@ -7,9 +7,9 @@ class User extends React.Component {
   render() {
     return (
       <div className="user-container">
-        <div>{this.props.name}</div>
-        <div>{this.props.email}</div>
-        <div>{this.props.company.name}</div>
+        <h1>{this.props.name}</h1>
+        <p>{this.props.email}</p>
+        <p>{this.props.company.name}</p>
         <div className='buttons-flex'>
           <div
             onClick={this.props.editUser}
