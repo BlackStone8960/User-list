@@ -43,7 +43,11 @@ class Parent extends React.Component {
         {this.state.edit ? (
           <EditUser/> 
         ) : (
-          <UserList users={this.state.users} deleteUser={this.removeUser} editUser={this.editUser}/>
+          <UserList
+            users={this.state.users}
+            removeUser={this.removeUser}
+            editUser={this.editUser}
+          />
         )}
       </>
     );
