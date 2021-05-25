@@ -2,7 +2,7 @@ body {
   background-color: rgb(164, 168, 192);
 }
 .main {
-  margin-top: 100px;
+  margin-top: 10%;
   display: flex;
   flex-wrap:wrap;
   justify-content: center;

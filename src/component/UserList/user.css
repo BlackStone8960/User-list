@@ -38,6 +38,42 @@ p {
 }
 
 .editContainer {
-  text-align: center;
-  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
 }
+
+form {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 50%;
+  background-color:whitesmoke;
+}
+
+form div {
+ display: flex;
+ justify-content: space-between;
+ align-items:baseline;
+ margin: 6%;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #333333;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+input {
+  width: 80%;
+  height: 30px;
+  margin: 10px 0px 10px 5px; 
+}
+
+
