@@ -20,4 +20,4 @@ Taichi Ishiguro coded following files.
 * /component/UserList/User.js
 * /component/EditUser/EditUser.js
 
-I was in charge of Parent component(setting some states, defining editUser and onSave method), and three child components of our projects.
+I was in charge of Parent component(setting some states, defining editUser and onSave method), and three child components(UserList.js, User.js, EditUser.js) of our projects.
